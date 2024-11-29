@@ -1,0 +1,24 @@
+{
+  "name": "suxi-ui-cli",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "bin": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "author": "maoguy",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^4.9.3",
+    "@types/prompts": "^2.4.2"
+  }
+}
