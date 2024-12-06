@@ -2,6 +2,7 @@
 import { Command } from 'commander';
 import packageJson from "../package.json";
 import { init } from '@/src/commands/init';
+import { add } from '@/src/commands/add' ;
 
 async function main() {
   const program = new Command()
@@ -15,6 +16,7 @@ async function main() {
   
   program
     .addCommand(init)
+    .addCommand(add)
 
   program.parse();
 }

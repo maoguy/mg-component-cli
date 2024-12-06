@@ -4,7 +4,7 @@ import { Command } from 'commander';
 import prompts from "prompts";
 // import { z } from "zod";
 
-const COMPONENTS_CONFIG_FILE_NAME = "ui-components.json";
+export const COMPONENTS_CONFIG_FILE_NAME = "ui-components.json";
 
 export const init = new Command()
   .name("init")
@@ -20,7 +20,7 @@ export const init = new Command()
   )
   .option(
     "-c, --cwd <cwd>",
-    "the working directory.defaults to the current directory.",
+    "the working directory. defaults to the current directory.",
     process.cwd()
   )
   .action(async(components, opts)=>{
@@ -30,6 +30,7 @@ export const init = new Command()
         ...opts
       };
       await runInit(options);
+      console.log("init success")
     }catch(error){
       console.error(error);
     }
@@ -39,7 +40,7 @@ export const init = new Command()
 export async function runInit(options:any) {
   console.log("runInit");
   
-  console.log("options",options)
+  // console.log("options",options)
   if (!options.yes) {
     const { proceed } = await prompts({
       type: "confirm",
